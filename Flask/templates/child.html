@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .important { color: #00f; }
+    </style>
+{% endblock %}
+{% block extra %}
+    {% if msg %}
+        <h1>信息：{{ msg }}</h1>
+    {% endif %}
+{% endblock %}
+{% block content %}
+    <h1>Index</h1>
+    <p class="important">Welcome to awesomepage</p>
+{% endblock %}
+{% block loop_item %}
+    科比
+{% endblock %}
