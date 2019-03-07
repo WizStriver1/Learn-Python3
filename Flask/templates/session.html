@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Session{% endblock %}
+{% block content %}
+    {% if login %}
+        <div><a href="/sessionlogout">退出</a></div>
+    {% else %}
+        <form action="/sessionlogin" method="post">
+            <div><input type="text" name="username" placeholder="username"></div>
+            <div><input type="password" name="password" placeholder="password"></div>
+            <div><input type="submit" value="登录"></div>
+        </form>
+    {% endif %}
+    {% if msg %}
+        <h1>session: {{ msg }}</h1>
+    {% endif %}
+{% endblock %}

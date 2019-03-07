@@ -1,6 +1,6 @@
 #!/usr/env python3
 # -*- coding: utf-8 -*-
-from flask import Flask, render_template, request, make_response, url_for, redirect, abort
+from flask import Flask, render_template, request, make_response, url_for, redirect, abort, session, escape
 
 from werkzeug.utils import secure_filename
 
@@ -16,6 +16,24 @@ def index():
          resp.set_cookie('username', 'server_set')
          return resp
     return render_template('child.html', items=['Kobe', 'Wade'], msg=username)
+
+@app.route('/checksession')
+def session_index():
+    if 'username' in session:
+        return render_template('session.html', msg='login with ' + escape(session['username']), login=True)
+    return render_template('session.html', msg='you are not login', login=False)
+
+@app.route('/sessionlogin', methods=['GET', 'POST'])
+def session_login():
+    if request.method == 'POST':
+        session['username'] = request.form['username']
+
+    return redirect(url_for('session_index'))
+
+@app.route('/sessionlogout')
+def session_logout():
+    session.pop('username', None)
+    return redirect(url_for('session_index'))
 
 @app.route('/post/<post_id>')
 @app.route('/post/<int:post_id>')
@@ -59,8 +77,20 @@ def notfound():
     abort(404)
     return render_template('not-found.html')
 
+# @app.errorhandler(404)
+# def page_not_found(error):
+#     return render_template('not-found.html', msg='render by errorhandler')
+
+# @app.errorhandler(404)
+# def page_not_found(error):
+#     return render_template('not-found.html', msg='render by errorhandler'), 404
+
 @app.errorhandler(404)
 def page_not_found(error):
-    return render_template('not-found.html', msg='render by errorhandler')
+    resp = make_response(render_template('not-found.html', msg='render by errorhandler'), 404)
+    resp.headers['X-Something'] = 'value'
+    return resp
+
+app.secret_key = '\x19\xedy<Y\x88\xa1#\xaaB:\xff>\xe5\xec\x16\x80\xaf\xec\xdb\t\xad\xa8A'
 
 app.run(host='0.0.0.0', port=6100, debug=config.debug)
