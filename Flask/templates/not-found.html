@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block title %}Not Found{% endblock %}
+{% block content %}
+    <h1 style="text-align: center; color: #f00;">404</h1>
+    {% if msg %}
+    <h2 style="text-align: right;">{{ msg }}</h2>
+    {% endif %}
+{% endblock %}
