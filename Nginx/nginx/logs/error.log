@@ -1,0 +1,12 @@
+2019/03/08 10:10:07 [error] 15964#9280: *1 CreateFile() "D:\my\SomeTest\Python\Nginx\nginx-1.14.2/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1", referrer: "http://127.0.0.1/"
+2019/03/08 11:14:50 [error] 15964#9280: *7 CreateFile() "D:\my\SomeTest\Python\Nginx\nginx-1.14.2/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1"
+2019/03/08 11:26:09 [error] 15964#9280: *8 CreateFile() "D:\my\SomeTest\Python\Nginx\nginx-1.14.2/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1", referrer: "http://127.0.0.1/"
+2019/03/08 16:46:15 [error] 5152#12860: *1 CreateFile() "D:\my\SomeTest\Python\Nginx\nginx-1.14.2/html/9000" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /9000 HTTP/1.1", host: "127.0.0.1"
+2019/03/08 16:46:19 [error] 5152#12860: *1 CreateFile() "D:\my\SomeTest\Python\Nginx\nginx-1.14.2/html/9000" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /9000 HTTP/1.1", host: "127.0.0.1"
+2019/03/08 16:46:26 [error] 5152#12860: *1 CreateFile() "D:\my\SomeTest\Python\Nginx\nginx-1.14.2/html/9000" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /9000 HTTP/1.1", host: "127.0.0.1"
+2019/03/08 16:46:40 [error] 5152#12860: *2 CreateFile() "D:\my\SomeTest\Python\Nginx\nginx-1.14.2/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2019/03/08 17:37:35 [emerg] 21888#12904: unexpected "}" in nginx/conf/nginx.conf:50
+2019/03/08 17:37:39 [emerg] 5080#18612: unexpected "}" in nginx/conf/nginx.conf:50
+2019/03/08 17:38:20 [emerg] 23616#22852: unexpected "}" in nginx/conf/nginx.conf:50
+2019/03/08 17:38:46 [emerg] 14144#14648: unexpected "}" in nginx/conf/nginx.conf:50
+2019/03/08 17:40:27 [emerg] 20976#22988: unexpected "}" in D:\my\SomeTest\Python\Nginx\nginx/conf/nginx.conf:50
