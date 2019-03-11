@@ -10,3 +10,11 @@
 2019/03/08 17:38:20 [emerg] 23616#22852: unexpected "}" in nginx/conf/nginx.conf:50
 2019/03/08 17:38:46 [emerg] 14144#14648: unexpected "}" in nginx/conf/nginx.conf:50
 2019/03/08 17:40:27 [emerg] 20976#22988: unexpected "}" in D:\my\SomeTest\Python\Nginx\nginx/conf/nginx.conf:50
+2019/03/11 09:33:18 [emerg] 4936#5504: bind() to 0.0.0.0:80 failed (10013: An attempt was made to access a socket in a way forbidden by its access permissions)
+2019/03/11 09:34:26 [emerg] 14544#13936: bind() to 0.0.0.0:80 failed (10013: An attempt was made to access a socket in a way forbidden by its access permissions)
+2019/03/11 09:34:30 [emerg] 2360#1452: bind() to 0.0.0.0:80 failed (10013: An attempt was made to access a socket in a way forbidden by its access permissions)
+2019/03/11 09:34:42 [emerg] 14724#15656: bind() to 0.0.0.0:80 failed (10013: An attempt was made to access a socket in a way forbidden by its access permissions)
+2019/03/11 09:35:11 [emerg] 15180#16140: bind() to 0.0.0.0:80 failed (10013: An attempt was made to access a socket in a way forbidden by its access permissions)
+2019/03/11 09:35:35 [emerg] 13400#4400: bind() to 0.0.0.0:80 failed (10013: An attempt was made to access a socket in a way forbidden by its access permissions)
+2019/03/11 09:35:53 [emerg] 13428#16252: bind() to 0.0.0.0:80 failed (10013: An attempt was made to access a socket in a way forbidden by its access permissions)
+2019/03/11 09:37:03 [emerg] 16172#15676: bind() to 0.0.0.0:80 failed (10013: An attempt was made to access a socket in a way forbidden by its access permissions)
