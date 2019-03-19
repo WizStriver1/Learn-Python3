@@ -18,3 +18,4 @@
 2019/03/11 09:35:35 [emerg] 13400#4400: bind() to 0.0.0.0:80 failed (10013: An attempt was made to access a socket in a way forbidden by its access permissions)
 2019/03/11 09:35:53 [emerg] 13428#16252: bind() to 0.0.0.0:80 failed (10013: An attempt was made to access a socket in a way forbidden by its access permissions)
 2019/03/11 09:37:03 [emerg] 16172#15676: bind() to 0.0.0.0:80 failed (10013: An attempt was made to access a socket in a way forbidden by its access permissions)
+2019/03/11 09:48:34 [error] 3692#11948: *11 upstream timed out (10060: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond) while connecting to upstream, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:6100/", host: "localhost"

@@ -3,10 +3,13 @@
 from flask import Flask, render_template, request, make_response, url_for, redirect, abort, session, escape
 
 from werkzeug.utils import secure_filename
+# import logging
 
 import config
 
 app = Flask(__name__)
+# log = logging.getLogger('werkzeug')
+# log.disabled = True
 
 @app.route('/')
 def index():

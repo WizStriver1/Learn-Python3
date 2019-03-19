@@ -100,3 +100,4 @@
 127.0.0.1 - - [11/Mar/2019:09:44:02 +0800] "GET / HTTP/1.1" 200 670 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
 127.0.0.1 - - [11/Mar/2019:09:44:02 +0800] "GET /uploads/style.css HTTP/1.1" 200 32 "http://localhost/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
 127.0.0.1 - - [11/Mar/2019:09:44:02 +0800] "GET /favicon.ico HTTP/1.1" 404 559 "http://localhost/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+127.0.0.1 - - [11/Mar/2019:09:48:34 +0800] "GET / HTTP/1.1" 504 537 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
