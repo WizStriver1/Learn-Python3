@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <link rel="stylesheet" href="{ url_for('static', filename='style.css') }">
+    <title>{% block title %}{% endblock %} - My webapps</title>
+    {% endblock %}
+</head>
+<body>
+    <h1>Sub base</h1>
+    <h2>同名title {{ self.title() }}</h2>
+    <div id="content">{% block content %}{% endblock %}</div>
+    <div id="footer">
+        {% block footer %}
+        &copy; Copyright 2019 by <a href="https://www.google.com">you</a>
+        {% endblock %}
+    </div>
+</body>
+</html>

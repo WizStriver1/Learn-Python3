@@ -18,5 +18,8 @@ def test():
 		print('Too many arguments!')
 
 print(__name__)
-if __name__ == '__main__':
-	test()
+import foo
+print(foo.foo_var)
+# if __name__ == '__main__':
+	
+    # hello()
