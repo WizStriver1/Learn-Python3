@@ -96,4 +96,5 @@ def page_not_found(error):
 
 app.secret_key = '\x19\xedy<Y\x88\xa1#\xaaB:\xff>\xe5\xec\x16\x80\xaf\xec\xdb\t\xad\xa8A'
 
-app.run(host='0.0.0.0', port=6100, debug=config.debug)
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=6100, debug=config.debug)
