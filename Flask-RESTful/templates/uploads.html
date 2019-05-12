@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Uploads</title>
+</head>
+<body>
+    <form action="http://localhost:6100?type=image" method="post">
+        <p><input type="file" multiple="multiple" name="photo"></p>
+        <p><input type="file" name="photo2"></p>
+        <p><input type="text" name="username" value="username"></p>
+        <p><input type="password" name="password" value="123"></p>
+    </form>
+    <p><button id="submit">提交</button></p>
+    <p><button id="getdata">GET</button></p>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+    <script src="http://malsup.github.com/jquery.form.js"></script>
+    <script>
+        $('#submit').on('click', function() {
+            $('form').ajaxSubmit({
+                data: {profile: true},
+                success: function(data) {
+                    console.log(data);
+                }
+            });
+        });
+        $('#getdata').on('click', function() {
+            $.ajax({
+                url: 'http://localhost:6100?type=image',
+                data: {'username': 'username'},
+                success: function(data) {
+                    console.log(data);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
