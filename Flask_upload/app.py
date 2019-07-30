@@ -39,7 +39,8 @@ class Upload(Resource):
             return redirect('/toupload')
         filename = photos.save(request.files['file'])
         print(filename)
-        return redirect('/toupload')
+        # return redirect('/toupload')
+        return filename
 
 api.add_resource(Upload, '/upload')
 
