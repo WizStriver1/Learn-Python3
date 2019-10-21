@@ -1,2 +1,3 @@
 # -*- coding: utf-8 -*-
-print(help(str))
+import time
+print(help(time))

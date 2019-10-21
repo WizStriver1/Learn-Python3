@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 from flask import Flask, render_template, request, make_response, url_for, redirect, abort, session, escape
 
+from flask_sockets import Sockets
+
 from werkzeug.utils import secure_filename
 # import logging
 
@@ -94,7 +96,19 @@ def page_not_found(error):
     resp.headers['X-Something'] = 'value'
     return resp
 
+sockets = Sockets(app)
+
+@sockets.route('/')
+def echo_socket(ws):
+    while not ws.closed:
+        message = ws.receive()
+        ws.send(message)
+
 app.secret_key = '\x19\xedy<Y\x88\xa1#\xaaB:\xff>\xe5\xec\x16\x80\xaf\xec\xdb\t\xad\xa8A'
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=6100, debug=config.debug)
+    from gevent import pywsgi
+    from geventwebsocket.handler import WebSocketHandler
+    # app.run(host='0.0.0.0', port=6100, debug=config.debug)
+    server = pywsgi.WSGIServer(('', 6100), app, handler_class=WebSocketHandler)
+    server.serve_forever()
