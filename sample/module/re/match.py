@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import re
 
-line = 'a    cloudlearn_hnlgdx DB f'
+line = 'a    /cloudlearn_hnlgdx / DB f'
 
 matchObj = re.match(r'(.*)(cloudlearn_[^\s]*)(.*)', line, re.M|re.I)
 
@@ -13,3 +13,6 @@ if matchObj:
 
 else:
     print('No match!')
+
+print(re.M|re.I)
+print(10|3)
