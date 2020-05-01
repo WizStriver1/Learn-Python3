@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script src="https://code.jquery.com/jquery-git.min.js"></script>
+  <script src="http://cdn.staticfile.org/FileSaver.js/1.3.8/FileSaver.min.js"></script>
+  <script>
+function b64toFile(b64Data, filename, contentType) {
+    let sliceSize = 512;
+    let byteCharacters = atob(b64Data);
+    let byteArrays = [];
+
+    for (let offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+        let slice = byteCharacters.slice(offset, offset + sliceSize);
+        let byteNumbers = new Array(slice.length);
+
+        for (let i = 0; i < slice.length; i++) {
+            byteNumbers[i] = slice.charCodeAt(i);
+        }
+        let byteArray = new Uint8Array(byteNumbers);
+        byteArrays.push(byteArray);
+    }
+
+    let file = new File(byteArrays, filename, {type: contentType});
+    return file;
+}
+
+$.ajax({
+  url: 'b64.txt',
+  success: function(data) {
+    // base64Data 是服务器获取到的数据
+    let file = b64toFile(data, 'test', 'application/vnd.ms-excel;charset=utf-8');
+
+    // 利用FileSaver.js 下载文件为Excel文件
+    saveAs(file, "fileName.xlsx");
+  }
+});
+
+  </script>
+</body>
+</html>
