@@ -44,7 +44,6 @@ def get_page(pathname):
       print(imageurl)
       print(e)
 
-
   for res in soup.findAll('a'):
     for content in res.contents:
       if content.encode('utf-8') == '下一页':
