@@ -41,6 +41,31 @@ def get_page_root_path(path):
   else:
     return ''
 
+def download_static(url, src, mode='wb'):
+  if src.startswith('http'):
+    url = src
+    matchObj = re.match(r'.*\/([^\/\?]*)?(\?.*)?', src, re.M|re.I)
+    if matchObj:
+      src = matchObj.group(1)
+      if src == 'css':
+        mode = 'ab'
+      if not src:
+        src = 'temp'
+        print(url, src)
+    else:
+      src = 'temp'
+      print(url, src)
+  else:
+    url = urlparse.urljoin(url, src)
+  src_split, imagename = os.path.split(src)
+  mkdirtree(src_split)
+  try:
+    img = urllib2.urlopen(url).read()
+    with open(os.path.join(os.getcwd(), remove_back_sign(src)), mode) as f: f.write(img)
+  except urllib2.URLError as e:
+    print(url)
+    print(e)
+
 def get_page(url=''):
   print('Download page: %s' % url)
   try:
@@ -63,15 +88,17 @@ def get_page(url=''):
   soup = BeautifulSoup(html, 'html.parser')
   for res in soup.findAll('img'):
     src = res.get('src')
-    imageurl = urlparse.urljoin(url, src)
-    src_split, imagename = os.path.split(src)
-    mkdirtree(src_split)
-    try:
-      img = urllib2.urlopen(imageurl).read()
-      with open(os.path.join(os.getcwd(), remove_back_sign(src)), 'wb') as f: f.write(img)
-    except urllib2.URLError as e:
-      print(imageurl)
-      print(e)
+    download_static(url, src)
+
+  for res in soup.findAll('link'):
+    href = res.get('href')
+    if href and not href == '':
+      download_static(url, href)
+
+  for res in soup.findAll('script'):
+    src = res.get('src')
+    if src and not src == '':
+      download_static(url, src)
 
   for res in soup.findAll("div", {"class": "right menu"}):
     new_res = res.find('a')
